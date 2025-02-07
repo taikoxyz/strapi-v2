@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_ui_navigation_children",
+  "info": {
+    "displayName": "NavigationChild",
+    "icon": "cube"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "string"
+    },
+    "href": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

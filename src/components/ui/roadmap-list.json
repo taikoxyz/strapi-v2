@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_ui_roadmap_lists",
+  "info": {
+    "displayName": "Roadmap List",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "displayName": "Roadmap Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.roadmap-item",
+      "required": true
+    }
+  }
+}

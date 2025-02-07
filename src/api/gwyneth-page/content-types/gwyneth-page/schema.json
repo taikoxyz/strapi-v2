@@ -1,0 +1,120 @@
+{
+  "kind": "singleType",
+  "collectionName": "gwyneth_pages",
+  "info": {
+    "singularName": "gwyneth-page",
+    "pluralName": "gwyneth-pages",
+    "displayName": "Gwyneth Page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "s1": {
+      "type": "string",
+      "default": "Hero Screen",
+      "required": true,
+      "private": true
+    },
+    "hero_logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "hero_title": {
+      "type": "text",
+      "required": true
+    },
+    "hero_text": {
+      "type": "text",
+      "required": true
+    },
+    "s2": {
+      "type": "string",
+      "default": "About Screen",
+      "required": true,
+      "private": true
+    },
+    "about_title": {
+      "type": "text",
+      "required": true
+    },
+    "about_text": {
+      "type": "text",
+      "required": true
+    },
+    "about_subtext": {
+      "type": "text"
+    },
+    "s3": {
+      "type": "string",
+      "default": "Key Features Screen",
+      "required": true,
+      "private": true
+    },
+    "features_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "features_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.features",
+      "required": true,
+      "max": 4
+    },
+    "s4": {
+      "type": "string",
+      "default": "Explore Screen",
+      "required": true,
+      "private": true
+    },
+    "explore_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "explore_title": {
+      "type": "text",
+      "required": true
+    },
+    "explore_text": {
+      "type": "text",
+      "required": true
+    },
+    "s5": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "default": "Cards Screen"
+    },
+    "cards_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.card",
+      "required": true
+    },
+    "s6": {
+      "type": "string",
+      "default": "Faq Screen",
+      "required": true,
+      "private": true
+    },
+    "faq_title": {
+      "type": "string",
+      "required": true
+    },
+    "faq_text": {
+      "type": "text",
+      "required": true
+    },
+    "faq_data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.faq-data"
+    }
+  }
+}

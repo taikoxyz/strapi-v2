@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_ui_explore_screens",
+  "info": {
+    "displayName": "Explore Screen",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    },
+    "suptitle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

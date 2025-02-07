@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_ui_roadmap_items",
+  "info": {
+    "displayName": "Roadmap Item",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

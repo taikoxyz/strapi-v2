@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_ui_navigation_links",
+  "info": {
+    "displayName": "NavigationLink",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "text"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "children": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.navigation-child"
+    },
+    "column": {
+      "type": "enumeration",
+      "enum": [
+        "Column 1",
+        "Column 2"
+      ],
+      "default": "Column 1",
+      "required": true
+    }
+  }
+}

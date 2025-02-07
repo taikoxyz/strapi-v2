@@ -1,0 +1,149 @@
+import type { Schema, Attribute } from '@strapi/strapi';
+
+export interface UiButton extends Schema.Component {
+  collectionName: 'components_ui_buttons';
+  info: {
+    displayName: 'Button';
+    icon: 'cube';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    link: Attribute.Text;
+    variant: Attribute.Enumeration<['pink', 'pink-outlined']>;
+    newTab: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    disabledArrow: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface UiCard extends Schema.Component {
+  collectionName: 'components_ui_cards';
+  info: {
+    displayName: 'Card';
+    icon: 'grid';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    text: Attribute.Text & Attribute.Required;
+    icon: Attribute.Media & Attribute.Required;
+    href: Attribute.Text;
+    disabled: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface UiExploreScreen extends Schema.Component {
+  collectionName: 'components_ui_explore_screens';
+  info: {
+    displayName: 'Explore Screen';
+    icon: 'grid';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    text: Attribute.Text & Attribute.Required;
+    link: Attribute.Component<'ui.button'>;
+    suptitle: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface UiFaqData extends Schema.Component {
+  collectionName: 'components_ui_faq_data';
+  info: {
+    displayName: 'FAQ';
+    icon: 'cube';
+    description: '';
+  };
+  attributes: {
+    question: Attribute.String & Attribute.Required;
+    answer: Attribute.Blocks & Attribute.Required;
+  };
+}
+
+export interface UiFeatures extends Schema.Component {
+  collectionName: 'components_ui_features';
+  info: {
+    displayName: 'Features';
+    icon: 'database';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Text & Attribute.Required;
+    disabled: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface UiNavigationChild extends Schema.Component {
+  collectionName: 'components_ui_navigation_children';
+  info: {
+    displayName: 'NavigationChild';
+    icon: 'cube';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    desc: Attribute.String;
+    href: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface UiNavigationLink extends Schema.Component {
+  collectionName: 'components_ui_navigation_links';
+  info: {
+    displayName: 'NavigationLink';
+    icon: 'cube';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    href: Attribute.Text;
+    disabled: Attribute.Boolean & Attribute.DefaultTo<false>;
+    icon: Attribute.Media;
+    children: Attribute.Component<'ui.navigation-child', true>;
+    column: Attribute.Enumeration<['Column 1', 'Column 2']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Column 1'>;
+  };
+}
+
+export interface UiRoadmapItem extends Schema.Component {
+  collectionName: 'components_ui_roadmap_items';
+  info: {
+    displayName: 'Roadmap Item';
+    icon: 'filter';
+  };
+  attributes: {
+    text: Attribute.Text;
+  };
+}
+
+export interface UiRoadmapList extends Schema.Component {
+  collectionName: 'components_ui_roadmap_lists';
+  info: {
+    displayName: 'Roadmap List';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    data: Attribute.Component<'ui.roadmap-item', true> & Attribute.Required;
+  };
+}
+
+declare module '@strapi/types' {
+  export module Shared {
+    export interface Components {
+      'ui.button': UiButton;
+      'ui.card': UiCard;
+      'ui.explore-screen': UiExploreScreen;
+      'ui.faq-data': UiFaqData;
+      'ui.features': UiFeatures;
+      'ui.navigation-child': UiNavigationChild;
+      'ui.navigation-link': UiNavigationLink;
+      'ui.roadmap-item': UiRoadmapItem;
+      'ui.roadmap-list': UiRoadmapList;
+    }
+  }
+}
