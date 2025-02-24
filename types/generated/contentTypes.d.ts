@@ -1263,6 +1263,100 @@ export interface ApiProjectCategoryProjectCategory
   };
 }
 
+export interface ApiTakeoffPageTakeoffPage extends Schema.SingleType {
+  collectionName: 'takeoff_pages';
+  info: {
+    singularName: 'takeoff-page';
+    pluralName: 'takeoff-pages';
+    displayName: 'Takeoff Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    s1: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Hero Screen'>;
+    hero_title: Attribute.Text & Attribute.Required;
+    hero_subtitle: Attribute.String & Attribute.Required;
+    s2: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Builders Screen'>;
+    builders_suptitle: Attribute.String & Attribute.Required;
+    builders_title: Attribute.Text & Attribute.Required;
+    builders_text: Attribute.Text & Attribute.Required;
+    builders_cards: Attribute.Component<'ui.features', true> &
+      Attribute.Required;
+    s3: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Community Screen'>;
+    community_suptitle: Attribute.String & Attribute.Required;
+    community_title: Attribute.Text & Attribute.Required;
+    community_text: Attribute.Text & Attribute.Required;
+    s4: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'How It Works Screen'>;
+    hiw_suptitle: Attribute.String & Attribute.Required;
+    hiw_title: Attribute.String & Attribute.Required;
+    hiw_text: Attribute.Text & Attribute.Required;
+    hiw_btn: Attribute.Component<'ui.button'> & Attribute.Required;
+    hiw_points_text: Attribute.Text & Attribute.Required;
+    s5: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Support Screen'>;
+    support_suptitle: Attribute.String & Attribute.Required;
+    support_title: Attribute.Text;
+    support_benefits: Attribute.Component<'ui.support-benefit', true> &
+      Attribute.Required;
+    s6: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Projects Screen'>;
+    projects_suptitle: Attribute.String & Attribute.Required;
+    projects_list: Attribute.Component<'ui.project', true> & Attribute.Required;
+    s7: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'FAQ Screen'>;
+    faq_title: Attribute.String & Attribute.Required;
+    faq_text: Attribute.Text & Attribute.Required;
+    faq_data: Attribute.Component<'ui.faq-data', true> & Attribute.Required;
+    s8: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Partners Screen'>;
+    partners_suptitle: Attribute.String & Attribute.Required;
+    partners_title: Attribute.String & Attribute.Required;
+    partners_text: Attribute.Text;
+    partners_data: Attribute.Component<'ui.partner', true> & Attribute.Required;
+    s9: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'[ COMPONENTS ]'>;
+    apply_banner: Attribute.Component<'ui.apply-banner'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::takeoff-page.takeoff-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::takeoff-page.takeoff-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1291,6 +1385,7 @@ declare module '@strapi/types' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::project-category.project-category': ApiProjectCategoryProjectCategory;
+      'api::takeoff-page.takeoff-page': ApiTakeoffPageTakeoffPage;
     }
   }
 }

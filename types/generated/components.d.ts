@@ -1,5 +1,22 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface UiApplyBanner extends Schema.Component {
+  collectionName: 'components_ui_apply_banners';
+  info: {
+    displayName: 'Apply Banner';
+    icon: 'archive';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.Text & Attribute.Required;
+    text: Attribute.Text;
+    button: Attribute.Component<'ui.button'> & Attribute.Required;
+    disabled: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+  };
+}
+
 export interface UiButton extends Schema.Component {
   collectionName: 'components_ui_buttons';
   info: {
@@ -109,6 +126,34 @@ export interface UiNavigationLink extends Schema.Component {
   };
 }
 
+export interface UiPartner extends Schema.Component {
+  collectionName: 'components_ui_partners';
+  info: {
+    displayName: 'Partner';
+    icon: 'cube';
+  };
+  attributes: {
+    icon: Attribute.Media & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    url: Attribute.Text;
+  };
+}
+
+export interface UiProject extends Schema.Component {
+  collectionName: 'components_ui_projects';
+  info: {
+    displayName: 'Project';
+    icon: 'archive';
+  };
+  attributes: {
+    icon: Attribute.Media & Attribute.Required;
+    title: Attribute.Text & Attribute.Required;
+    description: Attribute.Blocks & Attribute.Required;
+    url: Attribute.Text;
+  };
+}
+
 export interface UiRoadmapItem extends Schema.Component {
   collectionName: 'components_ui_roadmap_items';
   info: {
@@ -132,9 +177,24 @@ export interface UiRoadmapList extends Schema.Component {
   };
 }
 
+export interface UiSupportBenefit extends Schema.Component {
+  collectionName: 'components_ui_support_benefits';
+  info: {
+    displayName: 'Support Benefit';
+    icon: 'check';
+    description: '';
+  };
+  attributes: {
+    icon: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    features: Attribute.Component<'ui.roadmap-item', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'ui.apply-banner': UiApplyBanner;
       'ui.button': UiButton;
       'ui.card': UiCard;
       'ui.explore-screen': UiExploreScreen;
@@ -142,8 +202,11 @@ declare module '@strapi/types' {
       'ui.features': UiFeatures;
       'ui.navigation-child': UiNavigationChild;
       'ui.navigation-link': UiNavigationLink;
+      'ui.partner': UiPartner;
+      'ui.project': UiProject;
       'ui.roadmap-item': UiRoadmapItem;
       'ui.roadmap-list': UiRoadmapList;
+      'ui.support-benefit': UiSupportBenefit;
     }
   }
 }
