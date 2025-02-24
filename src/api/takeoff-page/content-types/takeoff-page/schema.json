@@ -1,0 +1,194 @@
+{
+  "kind": "singleType",
+  "collectionName": "takeoff_pages",
+  "info": {
+    "singularName": "takeoff-page",
+    "pluralName": "takeoff-pages",
+    "displayName": "Takeoff Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "s1": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "default": "Hero Screen"
+    },
+    "hero_title": {
+      "type": "text",
+      "required": true
+    },
+    "hero_subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "s2": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "default": "Builders Screen"
+    },
+    "builders_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "builders_title": {
+      "type": "text",
+      "required": true
+    },
+    "builders_text": {
+      "type": "text",
+      "required": true
+    },
+    "builders_cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.features",
+      "required": true
+    },
+    "s3": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "default": "Community Screen"
+    },
+    "community_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "community_title": {
+      "type": "text",
+      "required": true
+    },
+    "community_text": {
+      "type": "text",
+      "required": true
+    },
+    "s4": {
+      "type": "string",
+      "default": "How It Works Screen",
+      "required": true,
+      "private": true
+    },
+    "hiw_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "hiw_title": {
+      "type": "string",
+      "required": true
+    },
+    "hiw_text": {
+      "type": "text",
+      "required": true
+    },
+    "hiw_btn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button",
+      "required": true
+    },
+    "hiw_points_text": {
+      "type": "text",
+      "required": true
+    },
+    "s5": {
+      "type": "string",
+      "default": "Support Screen",
+      "required": true,
+      "private": true
+    },
+    "support_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "support_title": {
+      "type": "text"
+    },
+    "support_benefits": {
+      "displayName": "Support Benefit",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.support-benefit",
+      "required": true
+    },
+    "s6": {
+      "type": "string",
+      "default": "Projects Screen",
+      "required": true,
+      "private": true
+    },
+    "projects_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "projects_list": {
+      "displayName": "Project",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.project",
+      "required": true
+    },
+    "s7": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "default": "FAQ Screen"
+    },
+    "faq_title": {
+      "type": "string",
+      "required": true
+    },
+    "faq_text": {
+      "type": "text",
+      "required": true
+    },
+    "faq_data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.faq-data",
+      "required": true
+    },
+    "s8": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "default": "Partners Screen"
+    },
+    "partners_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "partners_title": {
+      "type": "string",
+      "required": true
+    },
+    "partners_text": {
+      "type": "text"
+    },
+    "partners_data": {
+      "displayName": "Partner",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.partner",
+      "required": true
+    },
+    "s9": {
+      "type": "string",
+      "required": true,
+      "default": "[ COMPONENTS ]",
+      "private": true
+    },
+    "apply_banner": {
+      "displayName": "Apply Banner",
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.apply-banner",
+      "required": false
+    }
+  }
+}

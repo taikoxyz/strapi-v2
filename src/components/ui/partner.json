@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_ui_partners",
+  "info": {
+    "displayName": "Partner",
+    "icon": "cube"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}

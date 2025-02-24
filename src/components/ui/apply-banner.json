@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_ui_apply_banners",
+  "info": {
+    "displayName": "Apply Banner",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "text": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button",
+      "required": true
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_ui_support_benefits",
+  "info": {
+    "displayName": "Support Benefit",
+    "icon": "check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.roadmap-item"
+    }
+  }
+}

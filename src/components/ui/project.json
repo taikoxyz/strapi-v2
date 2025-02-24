@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_ui_projects",
+  "info": {
+    "displayName": "Project",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}
