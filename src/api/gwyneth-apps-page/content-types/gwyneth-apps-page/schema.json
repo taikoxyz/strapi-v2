@@ -1,0 +1,76 @@
+{
+  "kind": "singleType",
+  "collectionName": "gwyneth_apps_pages",
+  "info": {
+    "singularName": "gwyneth-apps-page",
+    "pluralName": "gwyneth-apps-pages",
+    "displayName": "Gwyneth Apps Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "s1": {
+      "type": "string",
+      "default": "Hero Screen",
+      "required": true,
+      "private": true
+    },
+    "hero_title": {
+      "type": "text",
+      "required": true
+    },
+    "hero_about_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "hero_about_text": {
+      "type": "text",
+      "required": true
+    },
+    "hero_about_btn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    },
+    "hero_dapps": {
+      "displayName": "DApps",
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.d-apps"
+    },
+    "s2": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "default": "DISCLAIMER"
+    },
+    "disclaimer_title": {
+      "type": "string",
+      "required": true
+    },
+    "disclaimer_text": {
+      "type": "text",
+      "required": true
+    },
+    "disclaimer_active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "s3": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "default": "Apps Screen"
+    },
+    "apps_list": {
+      "displayName": "App",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.app"
+    }
+  }
+}

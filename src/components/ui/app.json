@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_ui_apps",
+  "info": {
+    "displayName": "App",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "categories": {
+      "displayName": "Category",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.category",
+      "required": false
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}

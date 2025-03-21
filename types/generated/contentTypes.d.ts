@@ -962,6 +962,67 @@ export interface ApiCareerCareer extends Schema.CollectionType {
   };
 }
 
+export interface ApiDaoPageDaoPage extends Schema.SingleType {
+  collectionName: 'dao_pages';
+  info: {
+    singularName: 'dao-page';
+    pluralName: 'dao-pages';
+    displayName: 'DAO Page';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    s1: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Welcome Screen'>;
+    welcome_suptitle: Attribute.String & Attribute.Required;
+    welcome_title: Attribute.Text & Attribute.Required;
+    welcome_text: Attribute.Text & Attribute.Required;
+    welcome_btn: Attribute.Component<'ui.button'>;
+    s2: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'About Screen'>;
+    about_suptitle: Attribute.String & Attribute.Required;
+    about_title: Attribute.Text & Attribute.Required;
+    about_text: Attribute.Text;
+    about_features: Attribute.Component<'ui.features', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    about_join_suptitle: Attribute.String & Attribute.Required;
+    about_join_title: Attribute.Text & Attribute.Required;
+    about_join_btn: Attribute.Component<'ui.button'>;
+    s3: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'FAQ Screen'>;
+    faq_title: Attribute.String & Attribute.Required;
+    faq_text: Attribute.Text & Attribute.Required;
+    faq_data: Attribute.Component<'ui.faq-data', true> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dao-page.dao-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dao-page.dao-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEcosystemEcosystem extends Schema.CollectionType {
   collectionName: 'ecosystems';
   info: {
@@ -1032,6 +1093,58 @@ export interface ApiEventEvent extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGwynethAppsPageGwynethAppsPage extends Schema.SingleType {
+  collectionName: 'gwyneth_apps_pages';
+  info: {
+    singularName: 'gwyneth-apps-page';
+    pluralName: 'gwyneth-apps-pages';
+    displayName: 'Gwyneth Apps Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    s1: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Hero Screen'>;
+    hero_title: Attribute.Text & Attribute.Required;
+    hero_about_suptitle: Attribute.String & Attribute.Required;
+    hero_about_text: Attribute.Text & Attribute.Required;
+    hero_about_btn: Attribute.Component<'ui.button'>;
+    hero_dapps: Attribute.Component<'ui.d-apps'>;
+    s2: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'DISCLAIMER'>;
+    disclaimer_title: Attribute.String & Attribute.Required;
+    disclaimer_text: Attribute.Text & Attribute.Required;
+    disclaimer_active: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    s3: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Apps Screen'>;
+    apps_list: Attribute.Component<'ui.app', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gwyneth-apps-page.gwyneth-apps-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gwyneth-apps-page.gwyneth-apps-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1379,8 +1492,10 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::career.career': ApiCareerCareer;
+      'api::dao-page.dao-page': ApiDaoPageDaoPage;
       'api::ecosystem.ecosystem': ApiEcosystemEcosystem;
       'api::event.event': ApiEventEvent;
+      'api::gwyneth-apps-page.gwyneth-apps-page': ApiGwynethAppsPageGwynethAppsPage;
       'api::gwyneth-page.gwyneth-page': ApiGwynethPageGwynethPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::navigation.navigation': ApiNavigationNavigation;

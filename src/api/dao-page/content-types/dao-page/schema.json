@@ -1,0 +1,96 @@
+{
+  "kind": "singleType",
+  "collectionName": "dao_pages",
+  "info": {
+    "singularName": "dao-page",
+    "pluralName": "dao-pages",
+    "displayName": "DAO Page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "s1": {
+      "type": "string",
+      "private": true,
+      "required": true,
+      "default": "Welcome Screen"
+    },
+    "welcome_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "welcome_title": {
+      "type": "text",
+      "required": true
+    },
+    "welcome_text": {
+      "type": "text",
+      "required": true
+    },
+    "welcome_btn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button",
+      "required": false
+    },
+    "s2": {
+      "type": "string",
+      "default": "About Screen",
+      "required": true,
+      "private": true
+    },
+    "about_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "about_title": {
+      "type": "text",
+      "required": true
+    },
+    "about_text": {
+      "type": "text"
+    },
+    "about_features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.features",
+      "required": true,
+      "max": 5
+    },
+    "about_join_suptitle": {
+      "type": "string",
+      "required": true
+    },
+    "about_join_title": {
+      "type": "text",
+      "required": true
+    },
+    "about_join_btn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    },
+    "s3": {
+      "type": "string",
+      "default": "FAQ Screen",
+      "required": true,
+      "private": true
+    },
+    "faq_title": {
+      "type": "string",
+      "required": true
+    },
+    "faq_text": {
+      "type": "text",
+      "required": true
+    },
+    "faq_data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.faq-data",
+      "required": true
+    }
+  }
+}

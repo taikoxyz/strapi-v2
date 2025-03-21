@@ -1,5 +1,23 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface UiApp extends Schema.Component {
+  collectionName: 'components_ui_apps';
+  info: {
+    displayName: 'App';
+    icon: 'archive';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    text: Attribute.Text & Attribute.Required;
+    icon: Attribute.Media & Attribute.Required;
+    type: Attribute.String & Attribute.Required;
+    categories: Attribute.Component<'ui.category', true>;
+    active: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    url: Attribute.Text;
+  };
+}
+
 export interface UiApplyBanner extends Schema.Component {
   collectionName: 'components_ui_apply_banners';
   info: {
@@ -49,6 +67,30 @@ export interface UiCard extends Schema.Component {
     disabled: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+  };
+}
+
+export interface UiCategory extends Schema.Component {
+  collectionName: 'components_ui_categories';
+  info: {
+    displayName: 'Category';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface UiDApps extends Schema.Component {
+  collectionName: 'components_ui_d_apps';
+  info: {
+    displayName: 'DApps';
+    icon: 'command';
+  };
+  attributes: {
+    icons: Attribute.Media & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    value: Attribute.String & Attribute.Required;
   };
 }
 
@@ -194,9 +236,12 @@ export interface UiSupportBenefit extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'ui.app': UiApp;
       'ui.apply-banner': UiApplyBanner;
       'ui.button': UiButton;
       'ui.card': UiCard;
+      'ui.category': UiCategory;
+      'ui.d-apps': UiDApps;
       'ui.explore-screen': UiExploreScreen;
       'ui.faq-data': UiFaqData;
       'ui.features': UiFeatures;
