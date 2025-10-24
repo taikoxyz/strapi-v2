@@ -1,19 +1,19 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Attribute, Schema } from '@strapi/strapi';
 
 export interface UiApp extends Schema.Component {
   collectionName: 'components_ui_apps';
   info: {
+    description: '';
     displayName: 'App';
     icon: 'archive';
-    description: '';
   };
   attributes: {
+    active: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    categories: Attribute.Component<'ui.category', true>;
+    icon: Attribute.Media<'images'> & Attribute.Required;
     name: Attribute.String & Attribute.Required;
     text: Attribute.Text & Attribute.Required;
-    icon: Attribute.Media & Attribute.Required;
     type: Attribute.String & Attribute.Required;
-    categories: Attribute.Component<'ui.category', true>;
-    active: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     url: Attribute.Text;
   };
 }
@@ -21,17 +21,17 @@ export interface UiApp extends Schema.Component {
 export interface UiApplyBanner extends Schema.Component {
   collectionName: 'components_ui_apply_banners';
   info: {
+    description: '';
     displayName: 'Apply Banner';
     icon: 'archive';
-    description: '';
   };
   attributes: {
-    title: Attribute.Text & Attribute.Required;
-    text: Attribute.Text;
     button: Attribute.Component<'ui.button'> & Attribute.Required;
     disabled: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<true>;
+    text: Attribute.Text;
+    title: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -42,39 +42,39 @@ export interface UiButton extends Schema.Component {
     icon: 'cube';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    link: Attribute.Text;
-    variant: Attribute.Enumeration<['pink', 'pink-outlined']>;
-    newTab: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
     disabledArrow: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    link: Attribute.Text;
+    name: Attribute.String & Attribute.Required;
+    newTab: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    variant: Attribute.Enumeration<['pink', 'pink-outlined']>;
   };
 }
 
 export interface UiCard extends Schema.Component {
   collectionName: 'components_ui_cards';
   info: {
+    description: '';
     displayName: 'Card';
     icon: 'grid';
-    description: '';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    text: Attribute.Text & Attribute.Required;
-    icon: Attribute.Media & Attribute.Required;
-    href: Attribute.Text;
     disabled: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    href: Attribute.Text;
+    icon: Attribute.Media<'images'> & Attribute.Required;
+    text: Attribute.Text & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
   };
 }
 
 export interface UiCategory extends Schema.Component {
   collectionName: 'components_ui_categories';
   info: {
-    displayName: 'Category';
     description: '';
+    displayName: 'Category';
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
@@ -88,7 +88,7 @@ export interface UiDApps extends Schema.Component {
     icon: 'command';
   };
   attributes: {
-    icons: Attribute.Media & Attribute.Required;
+    icons: Attribute.Media<'images', true> & Attribute.Required;
     name: Attribute.String & Attribute.Required;
     value: Attribute.String & Attribute.Required;
   };
@@ -101,23 +101,23 @@ export interface UiExploreScreen extends Schema.Component {
     icon: 'grid';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    text: Attribute.Text & Attribute.Required;
     link: Attribute.Component<'ui.button'>;
     suptitle: Attribute.String & Attribute.Required;
+    text: Attribute.Text & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
   };
 }
 
 export interface UiFaqData extends Schema.Component {
   collectionName: 'components_ui_faq_data';
   info: {
+    description: '';
     displayName: 'FAQ';
     icon: 'cube';
-    description: '';
   };
   attributes: {
-    question: Attribute.String & Attribute.Required;
     answer: Attribute.Blocks & Attribute.Required;
+    question: Attribute.String & Attribute.Required;
   };
 }
 
@@ -128,11 +128,11 @@ export interface UiFeatures extends Schema.Component {
     icon: 'database';
   };
   attributes: {
-    title: Attribute.String;
-    text: Attribute.Text & Attribute.Required;
     disabled: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    text: Attribute.Text & Attribute.Required;
+    title: Attribute.String;
   };
 }
 
@@ -143,28 +143,28 @@ export interface UiNavigationChild extends Schema.Component {
     icon: 'cube';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
     desc: Attribute.String;
     href: Attribute.Text & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
   };
 }
 
 export interface UiNavigationLink extends Schema.Component {
   collectionName: 'components_ui_navigation_links';
   info: {
+    description: '';
     displayName: 'NavigationLink';
     icon: 'cube';
-    description: '';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    href: Attribute.Text;
-    disabled: Attribute.Boolean & Attribute.DefaultTo<false>;
-    icon: Attribute.Media;
     children: Attribute.Component<'ui.navigation-child', true>;
     column: Attribute.Enumeration<['Column 1', 'Column 2']> &
       Attribute.Required &
       Attribute.DefaultTo<'Column 1'>;
+    disabled: Attribute.Boolean & Attribute.DefaultTo<false>;
+    href: Attribute.Text;
+    icon: Attribute.Media<'images'>;
+    name: Attribute.String & Attribute.Required;
   };
 }
 
@@ -175,9 +175,9 @@ export interface UiPartner extends Schema.Component {
     icon: 'cube';
   };
   attributes: {
-    icon: Attribute.Media & Attribute.Required;
-    name: Attribute.String & Attribute.Required;
     description: Attribute.Text;
+    icon: Attribute.Media<'images'> & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
     url: Attribute.Text;
   };
 }
@@ -189,9 +189,9 @@ export interface UiProject extends Schema.Component {
     icon: 'archive';
   };
   attributes: {
-    icon: Attribute.Media & Attribute.Required;
-    title: Attribute.Text & Attribute.Required;
     description: Attribute.Blocks & Attribute.Required;
+    icon: Attribute.Media<'images'> & Attribute.Required;
+    title: Attribute.Text & Attribute.Required;
     url: Attribute.Text;
   };
 }
@@ -214,22 +214,22 @@ export interface UiRoadmapList extends Schema.Component {
     icon: 'bulletList';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
     data: Attribute.Component<'ui.roadmap-item', true> & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
   };
 }
 
 export interface UiSupportBenefit extends Schema.Component {
   collectionName: 'components_ui_support_benefits';
   info: {
+    description: '';
     displayName: 'Support Benefit';
     icon: 'check';
-    description: '';
   };
   attributes: {
-    icon: Attribute.Media & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
     features: Attribute.Component<'ui.roadmap-item', true>;
+    icon: Attribute.Media<'images'> & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
   };
 }
 
